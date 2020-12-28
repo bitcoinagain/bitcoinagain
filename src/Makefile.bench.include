@@ -1,0 +1,45 @@
+bin_PROGRAMS += bench/bench_bitcoinagain
+BENCH_SRCDIR = bench
+BENCH_BINARY = bench/bench_bitcoinagain$(EXEEXT)
+
+
+bench_bench_bitcoinagain_SOURCES = \
+  bench/bench_bitcoinagain.cpp \
+  bench/bench.cpp \
+  bench/bench.h \
+  bench/Examples.cpp
+
+bench_bench_bitcoinagain_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOINAGAIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_bitcoinagain_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bench_bench_bitcoinagain_LDADD = \
+  $(LIBBITCOINAGAIN_SERVER) \
+  $(LIBBITCOINAGAIN_COMMON) \
+  $(LIBBITCOINAGAIN_UNIVALUE) \
+  $(LIBBITCOINAGAIN_UTIL) \
+  $(LIBBITCOINAGAIN_CRYPTO) \
+  $(LIBLEVELDB) \
+  $(LIBMEMENV) \
+  $(LIBSECP256K1)
+
+if ENABLE_ZMQ
+bench_bench_bitcoinagain_LDADD += $(LIBBITCOINAGAIN_ZMQ) $(ZMQ_LIBS)
+endif
+
+if ENABLE_WALLET
+bench_bench_bitcoinagain_LDADD += $(LIBBITCOINAGAIN_WALLET)
+endif
+
+bench_bench_bitcoinagain_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+bench_bench_bitcoinagain_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+
+CLEAN_BITCOINAGAIN_BENCH = bench/*.gcda bench/*.gcno
+
+CLEANFILES += $(CLEAN_BITCOINAGAIN_BENCH)
+
+bitcoinagain_bench: $(BENCH_BINARY)
+
+bench: $(BENCH_BINARY) FORCE
+	$(BENCH_BINARY)
+
+bitcoinagain_bench_clean : FORCE
+	rm -f $(CLEAN_BITCOINAGAIN_BENCH) $(bench_bench_bitcoinagain_OBJECTS) $(BENCH_BINARY)

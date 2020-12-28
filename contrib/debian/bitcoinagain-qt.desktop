@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Bitcoinagain
+Comment=Bitcoinagain P2P Cryptocurrency
+Comment[fr]=Bitcoinagain, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bitcoinagain, eşten eşe kriptografik sanal para birimi
+Exec=bitcoinagain-qt %u
+Terminal=false
+Type=Application
+Icon=bitcoinagain128
+MimeType=x-scheme-handler/bitcoinagain;
+Categories=Office;Finance;
