@@ -1,0 +1,5 @@
+Building Bitcoinagain
+
+See doc/build-*.md for instructions on building bitcoinagaind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Bitcoinagain.

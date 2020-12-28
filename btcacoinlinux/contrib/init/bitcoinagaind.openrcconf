@@ -1,0 +1,33 @@
+# /etc/conf.d/bitcoinagaind: config file for /etc/init.d/bitcoinagaind
+
+# Config file location
+#BITCOINAGAIND_CONFIGFILE="/etc/bitcoinagain/bitcoinagain.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOINAGAIND_USER)
+#BITCOINAGAIND_PIDDIR="/var/run/bitcoinagaind"
+
+# What filename to give the pidfile
+#BITCOINAGAIND_PIDFILE="${BITCOINAGAIND_PIDDIR}/bitcoinagaind.pid"
+
+# Where to write bitcoinagaind data (be mindful that the blockchain is large)
+#BITCOINAGAIND_DATADIR="/var/lib/bitcoinagaind"
+
+# User and group to own bitcoinagaind process
+#BITCOINAGAIND_USER="bitcoinagain"
+#BITCOINAGAIND_GROUP="bitcoinagain"
+
+# Path to bitcoinagaind executable
+#BITCOINAGAIND_BIN="/usr/bin/bitcoinagaind"
+
+# Nice value to run bitcoinagaind under
+#BITCOINAGAIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOINAGAIND_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for bitcoinagaind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOINAGAIND_SIGTERM_TIMEOUT=60

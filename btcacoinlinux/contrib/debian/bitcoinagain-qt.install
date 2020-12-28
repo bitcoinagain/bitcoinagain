@@ -1,0 +1,6 @@
+usr/local/bin/bitcoinagain-qt usr/bin
+share/pixmaps/bitcoinagain32.xpm usr/share/pixmaps
+share/pixmaps/bitcoinagain16.xpm usr/share/pixmaps
+share/pixmaps/bitcoinagain128.png usr/share/pixmaps
+debian/bitcoinagain-qt.desktop usr/share/applications
+debian/bitcoinagain-qt.protocol usr/share/kde4/services/

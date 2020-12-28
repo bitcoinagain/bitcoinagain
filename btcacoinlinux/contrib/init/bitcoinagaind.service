@@ -1,0 +1,22 @@
+[Unit]
+Description=Bitcoinagain's distributed currency daemon
+After=network.target
+
+[Service]
+User=bitcoinagain
+Group=bitcoinagain
+
+Type=forking
+PIDFile=/var/lib/bitcoinagaind/bitcoinagaind.pid
+ExecStart=/usr/bin/bitcoinagaind -daemon -pid=/var/lib/bitcoinagaind/bitcoinagaind.pid \
+-conf=/etc/bitcoinagain/bitcoinagain.conf -datadir=/var/lib/bitcoinagaind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
