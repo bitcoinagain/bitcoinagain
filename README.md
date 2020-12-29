@@ -3,20 +3,18 @@ Bitcoinagain Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/bitcoinagain/bitcoinagain.svg?branch=master)](https://travis-ci.org/bitcoinagain/bitcoinagain)
 
-https://bitcoinagaincore.org
-
-What is Bitcoinagain?
-----------------
+https://bitcoinagain.org
+-------------
 
 Bitcoinagain is an experimental new digital currency that enables instant payments to
 anyone, anywhere in the world. Bitcoinagain uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
+with no central authority: managing transactions and issuing money are carrie
 out collectively by the network. Bitcoinagain Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
 the Bitcoinagain Core software, see https://bitcoinagain.org/en/download, or read the
-[original whitepaper](https://bitcoinagaincore.org/bitcoinagain.pdf).
+[original whitepaper](https://bitcoinagain.org/bitcoinagain.pdf).
 
 License
 -------
